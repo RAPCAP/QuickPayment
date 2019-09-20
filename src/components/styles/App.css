@@ -1,0 +1,98 @@
+.Max {
+    transition-duration: 1s;
+    color: #FFA200;
+    text-shadow: 
+        black 1px 1px 0, 
+        black -1px -1px 0, 
+        black -1px 1px 0, 
+        black 1px -1px 0;
+}
+
+.FormPostAnim {
+    animation-name: FormPost_Anim;
+    animation-duration: 1s;
+}
+
+
+@keyframes FormPost_Anim {
+    0%   { }
+    100% { margin-top: 155px }
+}
+
+
+
+.extinction {
+    animation-name: extinction_Anim;
+    animation-duration: 0.8s;
+    opacity:0;
+}
+
+@keyframes extinction_Anim {
+    0%   { opacity: 1}
+    100% { opacity: 0}
+}
+
+.numberinput {
+    outline: 0;
+    outline-offset: 0;
+
+    border-radius: 100px;
+    border: 0px;
+    background-color: #FFF0E4;
+    box-shadow: 7px 6px 4px 5px rgba(0,0,0, 0.20);
+    box-sizing: border-box;
+
+    padding-bottom: 1.2rem;
+    padding-top: 1.2rem;
+    padding-right: 0px;
+    padding-left: 0px;
+
+    text-align: center;
+    transition: 0.4s;
+    text-align: center;
+
+    width: 530px;
+    font-size: 1.9rem;
+    margin: auto;
+}
+
+@media (max-width: 600px) {
+    .numberinput{
+    width: 300px;
+    }
+}
+
+@media (min-width: 3000px) {
+    .numberinput{
+    width: 1400px;
+    height:100px;
+    font-size:3.7rem;
+    }
+}
+
+
+.numberinput:hover {
+    box-shadow: 10px 9px 7px 8px rgba(0,0,0, 0.17);
+    transform: scale(1.05);
+}
+
+.Img {
+    width: 90px;
+    height: 90px;
+    border-radius: 200px;
+    transition: 0.4s;
+
+}
+
+.Img:hover {
+    -webkit-transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    transform: scale(1.4);
+}
+
+@media (min-width: 3000px) {
+    .Img {
+        width: 150px;
+        height: 150px;
+    }
+}
