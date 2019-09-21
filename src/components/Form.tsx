@@ -7,25 +7,25 @@ import { ErrorNumber, FormTel, ButtonSend, CheckBanner, CheckNumber } from './st
 import './styles/App.css'
 
 const Form: React.FC = () => {
-    // ïîêàçûâàåò âûáğàíîãî îïåğàòîğà èçõîäÿ èç ññûëêè
+    // ĞºĞ°Ñ€Ñ‚Ğ¸Ğ½ĞºĞ° Ğ²Ñ‹Ğ±Ñ€Ğ°Ğ½Ğ½Ğ¾Ğ³Ğ¾ Ğ¾Ğ¿ĞµÑ€Ğ°Ñ‚Ğ¾Ñ€Ğ°
     const ImgBeeline = (): JSX.Element => { return (<div>{imgBeeline}</div>) }
     const ImgMts     = (): JSX.Element => { return (<div>{imgMts}</div>) }
     const ImgMegafon = (): JSX.Element => { return (<div>{imgMegafon}</div>) }
     
-    const [valueInput,         ChangeValueInput] = useState('');   // çíà÷åíèå ââåäåííîå â ïîëå
-    const [errorInput,         ChangeErrorInput] = useState(false);// îøèáêà ïğè ââîäå
-    const [displayFormTel, ChangeDisplayFormTel] = useState(true); // ïîêàçûâàòü ïîëå ââîäà òåëåôîíà
-    const [formAnim,             ChangeFormAnim] = useState(false);// ïîêàçûâàòü àíèìàöèş ñíèæåíèÿ ïîëÿ
+    const [valueInput,         ChangeValueInput] = useState('');   // Ğ·Ğ½Ğ°Ñ‡ĞµĞ½Ğ¸Ğµ Ğ²Ğ²Ğ¾Ğ´Ğ°
+    const [errorInput,         ChangeErrorInput] = useState(false);// Ğ¾ÑˆĞ¸Ğ±ĞºĞ° Ğ²Ğ²Ğ¾Ğ´Ğ°
+    const [displayFormTel, ChangeDisplayFormTel] = useState(true); // Ğ¿Ğ¾ĞºĞ°Ñ‹Ğ²Ğ°Ñ‚ÑŒ Ñ„Ğ¾Ñ€Ğ¼Ñƒ Ğ²Ğ²Ğ¾Ğ´Ğ° Ñ‚ĞµĞ»ĞµÑ„Ğ¾Ğ½Ğ° Ğ¸Ğ½Ğ°Ñ‡Ğµ Ğ¿Ğ¾ĞºĞ°Ğ·Ñ‹Ğ²Ğ°ĞµÑ‚ Ğ²Ğ²Ğ¾Ğ´ ÑÑƒĞ¼Ğ¼Ñ‹
+    const [formAnim,             ChangeFormAnim] = useState(false);// Ğ°ĞºÑ‚Ğ¸Ğ²Ğ°Ñ†Ğ¸Ñ Ğ°Ğ½Ğ¸Ğ¼Ğ°Ñ†Ğ¸Ğ¸
 
-    const Change = (): void => ChangeDisplayFormTel(false) // âûïîëíÿåòñÿ ñ çàäåğæêîé
+    const Change = (): void => ChangeDisplayFormTel(false)
 
-    // îòîáğàæàåò òî ÷òî ââåë ïîëüçîâàòåëü â ñòîêó è ïîìåùàåò ıòî â õóê
+    // Ğ²Ğ½Ğ¾ÑĞ¸Ñ‚ Ğ²Ğ²Ğ¾Ğ´ Ğ¿Ğ¾Ğ»ÑŒĞ·Ğ¾Ğ²Ğ°Ñ‚ĞµĞ»ÑŒ Ğ² Ñ„Ğ¾Ñ€Ğ¼Ñƒ 
     const HandleChangeValueInput = (e: any): void => {
         ChangeErrorInput(false);
         ChangeValueInput(e.target.value);
     }
 
-    // ïğîâåğêà íîìåğà ïåğåáèğàÿ êàæäûé ñèìâîë ÷åğåç ìàñèâ
+    // Ğ¿Ñ€Ğ¾Ğ²ĞµÑ€ĞºĞ° Ğ½Ğ° Ğ²ĞµÑ€Ğ½Ğ¾ÑÑ‚ÑŒ Ğ½Ğ¾Ğ¼ĞµÑ€Ğ° Ğ¿Ğ¾ÑĞ»Ğµ Ğ½Ğ°Ğ¶Ğ°Ñ‚Ğ¸Ñ ĞºĞ½Ğ¾Ğ¿ĞºĞ¸
     const Validation = (e: any): void => {
         const onlyNumbers: string[] = valueInput.split('').filter(number => ((+number > 0) || (number === '0')))
 
