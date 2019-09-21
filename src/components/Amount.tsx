@@ -21,7 +21,7 @@ const Amount:React.FC = () => {
 
         // проверка на условия максимальной суммы и длины числа и вывод ошибки
         if ((e.target.value > 1000) && (e.target.value.length >= 4)) {
-            ChangeValueInput('1000');
+            ChangeValueInput('1000');// если ввод более 1000 ставит значение 1000
             ChangeErrorMaxSum(true);
         }
     }
