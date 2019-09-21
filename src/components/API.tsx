@@ -4,34 +4,34 @@ import './styles/App.css'
 
 
 const KEY: string = 'D3Y0-YHO4-XFV3-WG5Q';  
-const LOG: string = 'xjkemk1x';             // id функции ответа сервера (0\1)s 
+const LOG: string = 'xjkemk1x';             // id ГґГіГ­ГЄГ¶ГЁГЁ Г®ГІГўГҐГІГ  Г±ГҐГ°ГўГҐГ°Г  (0\1)s 
 const URL: string = 'https://randomapi.com/api/' + LOG + '?key=' + KEY
 
 const API: React.FC = () => {
-    // ответ сервера 
-    const [serverAnsver, ChangeServerAnsver]: any = useState(undefined);
-    // анимация загрузки
+    // Г®ГІГўГҐГІ Г±ГҐГ°ГўГҐГ°Г  
+    const [serverAnswer, ChangeServerAnswer]: any = useState(undefined);
+    // Г Г­ГЁГ¬Г Г¶ГЁГї Г§Г ГЈГ°ГіГ§ГЄГЁ
     const AnimLoading: JSX.Element = (<AnimationLoading> <AnimationBody></AnimationBody> </AnimationLoading >)
-    // после удачного ответа отправляет польхователя на домашнюю страницу
+    // ГЇГ®Г±Г«ГҐ ГіГ¤Г Г·Г­Г®ГЈГ® Г®ГІГўГҐГІГ  Г®ГІГЇГ°Г ГўГ«ГїГҐГІ ГЇГ®Г«ГјГµГ®ГўГ ГІГҐГ«Гї Г­Г  Г¤Г®Г¬Г ГёГ­ГѕГѕ Г±ГІГ°Г Г­ГЁГ¶Гі
     const ToHome = (): void => { window.location.assign('http://localhost:3000/') };
-    // функция запроса на сервер
+    // ГґГіГ­ГЄГ¶ГЁГї Г§Г ГЇГ°Г®Г±Г  Г­Г  Г±ГҐГ°ГўГҐГ°
     const Request = async () => {
-        ChangeServerAnsver("Loading");
+        ChangeServerAnswer("Loading");
 
         const api_url:   Response = await fetch(URL);
         const data1:     any      = await api_url.json();
         const resultAPI: Boolean  = (data1['results'] == 1);
 
-        ChangeServerAnsver(resultAPI)    
+        ChangeServerAnswer(resultAPI)    
         if (resultAPI) setTimeout(ToHome, 2500);
     }
 
     return (
         <div>
             <CheckNumber >
-                {(serverAnsver == undefined) ? 'Please check if the data is correct and confirm' :
-                 (serverAnsver == false)     ? 'ERROR! please try again' :
-                 (serverAnsver == true)      ? 'THE PAYMENT IS COMPLETE' 
+                {(serverAnswer == undefined) ? 'Please check if the data is correct and confirm' :
+                 (serverAnswer == false)     ? 'ERROR! please try again' :
+                 (serverAnswer == true)      ? 'THE PAYMENT IS COMPLETE' 
                                              :  AnimLoading}
             </CheckNumber>
             
