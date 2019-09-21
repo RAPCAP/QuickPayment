@@ -4,17 +4,17 @@ import './styles/App.css'
 
 
 const KEY: string = 'D3Y0-YHO4-XFV3-WG5Q';  
-const LOG: string = 'xjkemk1x';             // id ôóíêöèè îòâåòà ñåðâåðà (0\1)s 
+const LOG: string = 'xjkemk1x';             // id функции которая отвечает '1' или '0' 50%\50%
 const URL: string = 'https://randomapi.com/api/' + LOG + '?key=' + KEY
 
 const API: React.FC = () => {
-    // îòâåò ñåðâåðà 
+    // ответ сервера
     const [serverAnswer, ChangeServerAnswer]: any = useState(undefined);
-    // àíèìàöèÿ çàãðóçêè
+    // показывать анимацию ожидания ответа сервера 
     const AnimLoading: JSX.Element = (<AnimationLoading> <AnimationBody></AnimationBody> </AnimationLoading >)
-    // ïîñëå óäà÷íîãî îòâåòà îòïðàâëÿåò ïîëüõîâàòåëÿ íà äîìàøíþþ ñòðàíèöó
+    // функция отправки пользователя на главную страницу
     const ToHome = (): void => { window.location.assign('http://localhost:3000/') };
-    // ôóíêöèÿ çàïðîñà íà ñåðâåð
+    // запрос на сервер
     const Request = async () => {
         ChangeServerAnswer("Loading");
 
