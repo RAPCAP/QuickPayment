@@ -6,27 +6,27 @@ import { ErrorNumber, ButtonSend, Notification, Money, InputSum } from './styles
 
 const Amount:React.FC = () => {
 
-    const [valueInput,   ChangeValueInput]  = useState('');   // çíà÷åíèå ââîäà îò ïîëüçîâàòåëÿ
-    const [errorInput,   ChangeErrorInput]  = useState(false);// îøèáêà ââîäà
-    const [errorMaxSum, ChangeErrorMaxSum]  = useState(false);// îèøáêà ìàêñèìàëüíîé ñóììû
-    const [showPay,         ChangeShowPay]  = useState(false);// ïîêàçûâàòü ñëåäóþùåå îêíî
-    const [extinction,   ChangeExtinction]  = useState(false);// àíèìàöèÿ è ñêðûòèå òåêóùåãî îêíà
+    const [valueInput,   ChangeValueInput]  = useState('');   // Ð¿Ñ€Ð¸Ð½Ð¸Ð¼Ð°ÐµÑ‚ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ Ñ„Ð¾Ñ€Ð¼Ñ‹
+    const [errorInput,   ChangeErrorInput]  = useState(false);// Ð¾ÑˆÐ¸Ð±ÐºÐ° Ð²Ð²Ð¾Ð´Ð°
+    const [errorMaxSum, ChangeErrorMaxSum]  = useState(false);// Ð¾ÑˆÐ¸Ð±ÐºÐ° Ð¼Ð°ÐºÑÐ¸Ð¼Ð°Ð»ÑŒÐ½Ð¾Ð¹ ÑÑƒÐ¼Ð¼Ñ‹ Ð²Ð²Ð¾Ð´Ð° 1000
+    const [showPay,         ChangeShowPay]  = useState(false);// Ð¿Ð¾ÐºÐ°Ð·Ñ‹Ð²Ð°Ñ‚ÑŒ Ð¾ÐºÐ½Ð¾ Ð¾Ð¿Ð»Ð°Ñ‚Ñ‹
+    const [extinction,   ChangeExtinction]  = useState(false);// Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·ÑƒÐµÑ‚ÑÑ Ð´Ð»Ñ Ð°Ð½Ð¸Ð¼Ð°Ñ†Ð¸Ð¸ Ð¸ÑÑ‡ÐµÐ·Ð½Ð¾Ð²ÐµÐ½Ð¸Ñ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð²
 
-    const Change = (): void => ChangeShowPay(true)// âûïîëíÿåòñÿ ñ çàäåðæêîé
+    const Change = (): void => ChangeShowPay(true)
 
-    // ïðîâåðêà ââîäà â ðåàëüíîì âðåìåíè è îòîáðàæåíèå íà êíîïêå
+    // Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·ÑƒÐµÑ‚ Ð²Ð²Ð¾Ð´ Ð¾Ñ‚ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»Ñ Ð¸ Ð²Ð½Ð¾ÑÐ¸Ñ‚ Ð² Ñ„Ð¾Ñ€Ð¼Ñƒ
     const onChange = (e:any): void => {
         ChangeErrorInput(false);
         ChangeValueInput(e.target.value);
 
-        // îãðàíè÷åíèå íà ââîä áîëåå 1000
+        // Ð¿Ñ€Ð¾Ð²ÐµÑ€ÐºÐ° Ð½Ð° ÑƒÑÐ»Ð¾Ð²Ð¸Ñ Ð¼Ð°ÐºÑÐ¸Ð¼Ð°Ð»ÑŒÐ½Ð¾Ð¹ ÑÑƒÐ¼Ð¼Ñ‹ Ð¸ Ð´Ð»Ð¸Ð½Ñ‹ Ñ‡Ð¸ÑÐ»Ð° Ð¸ Ð²Ñ‹Ð²Ð¾Ð´ Ð¾ÑˆÐ¸Ð±ÐºÐ¸
         if ((e.target.value > 1000) && (e.target.value.length >= 4)) {
             ChangeValueInput('1000');
             ChangeErrorMaxSum(true);
         }
     }
 
-    // ïðîâåðêà ïîñëå íàæàòèÿ êíîïêè îïëàòèòü
+    // Ð¿Ñ€Ð¾Ð²ÐµÑ€ÐºÐ° Ð¿Ð¾ÑÐ»Ðµ Ð½Ð°Ð¶Ð°Ñ‚Ð¸Ñ Ð½Ð° ÐºÐ½Ð¾Ð¿ÐºÑƒ
     const Validation = (): void => {
         ChangeErrorInput(false);
 
