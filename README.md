@@ -1,1 +1,1 @@
-http://quickpayment.tk
+
